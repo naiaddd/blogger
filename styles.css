@@ -1,10 +1,16 @@
 /* Set the background color to dark slate and text color to green */
+
+
+@import url('https://cdn.jsdelivr.net/gh/source-foundry/Hack@latest/build/web/hack.css');
+
+
 body {
     background-color: black; /* Dark Slate */
     color: #32CD32; /* Green */
-    font-family: Arial, sans-serif;
+    font-family: 'Hack', monospace;
     margin: 0;
     padding: 0;
+
 }
 
 header {
@@ -20,3 +26,4 @@ main {
     text-align: center;
     padding: 20px;
 }
+
