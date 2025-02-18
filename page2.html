@@ -3,16 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Second Page</title>
+    <title>Bottom Text</title>
     <link rel="stylesheet" href="./styles.css">
+<style> body { margin-left: 15px; }
+</style>
 </head>
 <body>
-    <header>
-        <h1>Welcome to Page 2. </h1>
-    </header>
-    <main>
-        <p>This is a paragraph.</p>
-    </main>
+
+Difficulty : Trivial<br>
+<br>
+Time : 30 mins (including background research about the meaning of git functions which is not strictly necessary)<br>
+<br>
+I was expecting this to be more involved than it turned out to be. In fact, it was extremely easy and appears to work perfectly from the start with no debugging. Which is good, because bash scripts have required significant debugging for me in the past. At time of writing I've only tested a manual execution of the bash script, so we will see when the scheduled automatic push rolls around in... 18 hours, if the cron automation requires any debugging.<br>
+<br>
+So, I use a note-taking app which saves notes in markdown to a folder on my system. The app has a premium feature for automatic syncing, but as a semi-employed poor in a high cost-of-living region of a high cost-of-living nation doing absolutely everything possible to scrounge my way to financial security, my subscription budget allows for YouTube Premium alone. And even there, I struggle to justify it with Google's declining product quality. But I digress - the automated sync.<br>
+<br>
+<br>
+Steps 0: Have notes folder, have github account, have git CLI tools on your system, setup git authentication method of your choice<br>
+<br>
+Step 1: Create an empty git repo https://your-user-name/your-repo<br>
+Step 2: Open a terminal and cd to/your/notes/folder<br>
+Step 3: Initialise and push git repo with<br>
+	git init<br>
+	git remote add origin https://your-user-name/your-repo<br>
+	git add .<br>
+	git commit -m "commit the first"<br>
+	git push -u origin main<br>
+<br>
+<br>
+Beautiful! Check the repo to see that it uploaded and if it did, now we automate him.<br>
+<br>
+First we create a tiny shell script as follows :<br>
+<br>
+	#!/bin/bash<br>
+<br>
+	cd /path/to/your/notes || exit<br>
+<br>
+	git add .<br>
+<br>
+	git commit -m "Automated commit : $(date)"<br>
+<br>
+	git push<br>
+<br>
+<br>
+Save it somewhere convenient, I tucked it inside the notes directory for cleanliness.<br>
+<br>
+Make it executable<br>
+<br>
+	chmod +x auto-git.sh<br>
+<br>
+The finishing touch, a cron job :<br>
+<br>
+	crontab -e<br>
+<br>
+	0 0 * * 1 /path/to/auto-git.sh<br>
+<br>
+Which will set it to run the script every Monday at midnight, adjust for your preference of course.<br>
+<br>
+And that's it! Done!<br>
+<br>
+If for some unfortunate reason you are still using MicroSlop in 2025 and want to follow along, well. I'm not going to help you hurt yourself like that, and encourage you to exit that abusive relationship immediately. But if you really must stay, just ask a language model to translate the steps for your system.<br>
+<br>
+<br>
+<br>
+
 
 
     <a href="index.html">Back to Home</a>

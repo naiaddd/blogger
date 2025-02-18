@@ -27,3 +27,15 @@ main {
     padding: 20px;
 }
 
+.preview-popup {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    max-width: 300px;
+    font-size: 14px;
+    display: none;
+    z-index: 1000;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
