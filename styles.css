@@ -39,3 +39,39 @@ main {
     z-index: 1000;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
+
+
+/* Inline popup styles */
+#alert-message {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+    display: none;
+    font-size: 14px;
+    opacity: 0;  /* Start as invisible */
+    transition: opacity 2s ease-in-out;  /* Fade effect */
+}
+
+/* Hidden class to initially hide the alert */
+.hidden {
+    opacity: 0;
+}
+
+
+
+button {
+    background-color: #008CBA;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-left: 5px;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #005f73;
+}
