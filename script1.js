@@ -80,3 +80,11 @@ function copyEmail() {
         console.error("Failed to copy email: ", err);
     });
 }
+
+
+
+
+
+
+
+
