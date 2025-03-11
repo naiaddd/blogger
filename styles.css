@@ -13,6 +13,10 @@ body {
 
 }
 
+.dataset-link {
+    color: #32CD32;
+}
+
 header {
     text-align: center;
     padding: 50px 0;
@@ -42,7 +46,7 @@ main {
 
 
 /* Inline popup styles */
-#alert-message {
+alert-message {
     position: absolute;
     background: rgba(171, 171, 171, 0.8);
     color: blue;
