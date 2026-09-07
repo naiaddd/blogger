@@ -17,14 +17,17 @@ document.querySelectorAll(".project").forEach((details) => {
       return;
     }
     event.preventDefault();
-    const startHeight = body.getBoundingClientRect().height;
+    // Closed details can retain a laid-out body in the browser. Its measured
+    // height is not the visible height: an opening must start at zero.
+    const startHeight = details.open ? body.getBoundingClientRect().height : 0;
+    const startOpacity = details.open ? getComputedStyle(body).opacity : "0";
     expanding = animation ? !expanding : !details.open;
     if (animation) animation.cancel();
     details.open = true;
     animation = body.animate(
-      [{ height: startHeight + "px", opacity: startHeight ? 1 : 0 },
-       { height: (expanding ? body.scrollHeight : 0) + "px", opacity: expanding ? 1 : 0 }],
-      { duration: 240, easing: "cubic-bezier(.2,.7,.2,1)" }
+      [{ height: startHeight + "px", opacity: startOpacity },
+       { height: (expanding ? body.querySelector(".project-content").getBoundingClientRect().height : 0) + "px", opacity: expanding ? 1 : 0 }],
+      { duration: parseFloat(getComputedStyle(details).getPropertyValue("--motion-ms")), easing: "cubic-bezier(.2,.7,.2,1)" }
     );
     animation.onfinish = () => {
       details.open = expanding;
@@ -45,7 +48,6 @@ document.querySelectorAll(".copy-email").forEach((button) => {
     }
   });
 });
-
 
 
 

@@ -20,3 +20,12 @@ Cause: clipboard rejection was logged only to the console.
 Fix: show an accessible status message; offer copying only where the
 clipboard API exists, and keep the email link usable in all cases.
 Regression check: verify both clipboard success and rejection messages.
+07/09/26 — Project expansion skipped its height animation
+Cause: a closed details body can still report its full layout height.
+Trap: the original test assumed closed content always measured zero, so the
+opening keyframes accidentally had identical heights in affected browsers.
+Fix: explicitly start closed entries at zero; measure the inner content for
+the target height. Preserve the current height and opacity on reversal.
+Timing now uses the shared CSS --motion-ms setting, defaulting to 300 ms.
+Regression check: simulate a closed body reporting its full height; verify
+opening 0-to-content, closing content-to-0, interrupted reversal, and 300 ms.
