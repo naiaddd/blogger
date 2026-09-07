@@ -29,3 +29,12 @@ the target height. Preserve the current height and opacity on reversal.
 Timing now uses the shared CSS --motion-ms setting, defaulting to 300 ms.
 Regression check: simulate a closed body reporting its full height; verify
 opening 0-to-content, closing content-to-0, interrupted reversal, and 300 ms.
+07/09/26 — Expansion still snapped after the first animation fix
+Cause: animating the inner body relied on native details revealing and laying
+out hidden descendants in time. Explicit zero keyframes did not resolve the
+reported browser behaviour. The earlier mock test did not model rendering.
+Fix: animate the always-visible outer details row, with overflow clipped.
+Measure native closed/open row heights, including borders and wrapped text.
+Use the shared 600 ms timing setting and ease-in-out for clearer motion.
+Regression check: outer-row opening, closing and interrupted reversal tests.
+Visual confirmation in the user's browser remains necessary.

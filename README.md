@@ -15,7 +15,7 @@ Motion respects the visitor's reduced-motion setting. Public source links
 should only be added after verifying that the repository is accessible.
 
 Set --motion-ms in styles.css to tune project animations and control
-transitions together (300 ms by default).
+transitions together (600 ms by default).
 
 The older data.js, py.js, and output.html experiments are retained but are
 not loaded or linked by the portfolio.

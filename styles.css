@@ -5,7 +5,7 @@
   --muted: #87958b;
   --green: #78d98b;
   --line: #26322a;
-  --motion-ms: 300;
+  --motion-ms: 600;
   --motion: calc(var(--motion-ms) * 1ms);
   font-family: "Hack", "SFMono-Regular", Consolas, "Liberation Mono", monospace;
 }
@@ -26,7 +26,7 @@ h1 { color: #e5ece6; font-size: clamp(36px, 5vw, 56px); font-weight: 500; line-h
 .intro { color: var(--muted); max-width: 48ch; margin: 0; }
 .list-heading { display: flex; justify-content: space-between; gap: 12px; color: var(--muted); padding-bottom: 14px; }
 .project-list { border-top: 1px solid var(--line); }
-.project { border-bottom: 1px solid var(--line); scroll-margin-top: 24px; }
+.project { border-bottom: 1px solid var(--line); scroll-margin-top: 24px; overflow: hidden; }
 summary { display: grid; grid-template-columns: 12px minmax(115px, .8fr) minmax(0, 1.2fr) 34px; align-items: center; gap: 14px; list-style: none; cursor: pointer; padding: 21px 3px; transition: background-color var(--motion), color var(--motion); }
 summary::-webkit-details-marker { display: none; }
 summary:hover { background: #101a13; }

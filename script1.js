@@ -4,11 +4,10 @@
 const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 document.querySelectorAll(".project").forEach((details) => {
   const summary = details.querySelector("summary");
-  const body = details.querySelector(".project-body");
   let animation;
   let expanding = details.open;
   summary.addEventListener("click", (event) => {
-    if (reducedMotion.matches || typeof body.animate !== "function") {
+    if (reducedMotion.matches || typeof details.animate !== "function") {
       if (animation) {
         animation.cancel();
         animation = undefined;
@@ -17,17 +16,18 @@ document.querySelectorAll(".project").forEach((details) => {
       return;
     }
     event.preventDefault();
-    // Closed details can retain a laid-out body in the browser. Its measured
-    // height is not the visible height: an opening must start at zero.
-    const startHeight = details.open ? body.getBoundingClientRect().height : 0;
-    const startOpacity = details.open ? getComputedStyle(body).opacity : "0";
+    // Animate the visible outer row, not content hidden by native details.
+    const startHeight = details.getBoundingClientRect().height;
     expanding = animation ? !expanding : !details.open;
     if (animation) animation.cancel();
+    // Measure each native state synchronously, before the next paint. This
+    // includes borders and wrapped summary text without guessing dimensions.
+    details.open = expanding;
+    const endHeight = details.getBoundingClientRect().height;
     details.open = true;
-    animation = body.animate(
-      [{ height: startHeight + "px", opacity: startOpacity },
-       { height: (expanding ? body.querySelector(".project-content").getBoundingClientRect().height : 0) + "px", opacity: expanding ? 1 : 0 }],
-      { duration: parseFloat(getComputedStyle(details).getPropertyValue("--motion-ms")), easing: "cubic-bezier(.2,.7,.2,1)" }
+    animation = details.animate(
+      [{ height: startHeight + "px" }, { height: endHeight + "px" }],
+      { duration: parseFloat(getComputedStyle(details).getPropertyValue("--motion-ms")), easing: "ease-in-out" }
     );
     animation.onfinish = () => {
       details.open = expanding;
@@ -48,7 +48,6 @@ document.querySelectorAll(".copy-email").forEach((button) => {
     }
   });
 });
-
 
 
 
