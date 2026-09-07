@@ -5,7 +5,7 @@
   --muted: #87958b;
   --green: #78d98b;
   --line: #26322a;
-  --motion-ms: 600;
+  --motion-ms: 500;
   --motion: calc(var(--motion-ms) * 1ms);
   font-family: "Hack", "SFMono-Regular", Consolas, "Liberation Mono", monospace;
 }
