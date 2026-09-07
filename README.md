@@ -7,8 +7,6 @@ Serve this directory with a local HTTP server and open index.html.
 The site also supports repository subpaths such as /blogger/.
 
 - index.html: selected projects, ordered by maturity and presentation value.
-- projects.html: condensed early-project journal.
-- autogit.html: historical automation write-up.
 - styles.css: shared layout, colours, motion, and responsive rules.
 - script1.js: optional accordion animation and email copying.
 
