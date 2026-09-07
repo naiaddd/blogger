@@ -1,45 +1,86 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<link rel="stylesheet" href="./styles.css">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Web_1</title>
-    <script src="./script1.js"></script>
-    <script src="./data.js"></script>
-    <script src="./py.js"></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Software and useful tools by James McAllister-Barnard. Reading apps, network tools, desktop utilities, and more.">
+<meta name="theme-color" content="#080b09">
+<title>Projects — James McAllister-Barnard</title>
+<link rel="stylesheet" href="./styles.css">
+<script src="./script1.js" defer></script>
 </head>
 <body>
-    <header>
-        <h1>Welcome to My Website</h1>
-        <h2> Index </h2>
-        <div class =preview-popup></div>
-        <p>Random Australian Dataset: <div id="dataset"></div><br></p>
-        <a href=projects.html class =preview-link data-url=projects.html>Projects</a>
-        <br>
-        <br>
-
-
-    </header>
-    <main>
-    <br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-
-        <p>This page last updated <span id="last-updated"></span></p>
-       <p>contact - <span id="email">sarurnaru@proton.me</span>
-         <button onclick="copyEmail()">Copy</button>
-         </p>
-         <div id="alert-message" class="hidden">Copied to clipboard.</div>
-    </main>
-
+<a class="skip-link" href="#projects">Skip to projects</a>
+<div class="page">
+<main id="projects">
+<header class="page-heading"><p class="eyebrow">Personal software &amp; useful tools</p><h1>Projects<span class="heading-dot" aria-hidden="true">.</span></h1><p class="intro">Things I've built to make everyday tasks a little better.</p></header>
+<div class="list-heading"><span>Selected work</span><span>Select a project to explore</span></div>
+<div class="project-list">
+<details class="project" id="didact">
+<summary><span class="indicator" aria-hidden="true"></span><span class="project-name">Didact</span><span class="project-purpose">Reading and organised highlights</span><span class="expand-label" aria-hidden="true"></span></summary>
+<div class="project-body"><div class="project-content"><p>A PDF and article reader built around a personal library. Keep your place, collect highlights by category, and return to passages worth keeping.</p><p class="project-tools">Flutter · Android & Linux</p></div></div>
+</details>
+<details class="project" id="sentry">
+<summary><span class="indicator" aria-hidden="true"></span><span class="project-name">Sentry</span><span class="project-purpose">Alerts and reports in one place</span><span class="expand-label" aria-hidden="true"></span></summary>
+<div class="project-body"><div class="project-content"><p>A personal notification hub that brings feed alerts and reports from other tools to an Android inbox. Shared delivery rules keep the connected projects working together.</p><p class="project-tools">Kotlin · Python · Firebase</p></div></div>
+</details>
+<details class="project" id="chatter">
+<summary><span class="indicator" aria-hidden="true"></span><span class="project-name">Chatter</span><span class="project-purpose">A flexible AI chat client</span><span class="expand-label" aria-hidden="true"></span></summary>
+<div class="project-body"><div class="project-content"><p>Streaming conversations, alternate reply branches, image attachments, and per-message costs. Supports multiple providers in a desktop and Android interface.</p><p class="project-tools">Flutter · SQLite</p></div></div>
+</details>
+<details class="project" id="network">
+<summary><span class="indicator" aria-hidden="true"></span><span class="project-name">Network tools</span><span class="project-purpose">Understanding speed and data use</span><span class="expand-label" aria-hidden="true"></span></summary>
+<div class="project-body"><div class="project-content"><p>Anetmon tracks Android data usage. Netuse shows Linux traffic and process history. Netspeed measures connection speed, latency, and jitter from the command line.</p><p class="project-tools">Kotlin · Python · Linux & Android</p></div></div>
+</details>
+<details class="project" id="industria">
+<summary><span class="indicator" aria-hidden="true"></span><span class="project-name">Industria</span><span class="project-purpose">Everyday task organisation</span><span class="expand-label" aria-hidden="true"></span></summary>
+<div class="project-body"><div class="project-content"><p>A task organiser with categories, tags, sorting, and filters. Keyboard shortcuts and small animated details make everyday task management feel more considered.</p><p class="project-tools">Flutter · Firebase</p></div></div>
+</details>
+<details class="project" id="digest">
+<summary><span class="indicator" aria-hidden="true"></span><span class="project-name">Digest</span><span class="project-purpose">A personal news reading workflow</span><span class="expand-label" aria-hidden="true"></span></summary>
+<div class="project-body"><div class="project-content"><p>Collects articles from chosen feeds into a searchable local library. A terminal reader and a phone-to-desktop selection workflow help turn incoming headlines into something manageable.</p><p class="project-tools">Python · SQLite · Textual</p></div></div>
+</details>
+<details class="project" id="indicium">
+<summary><span class="indicator" aria-hidden="true"></span><span class="project-name">Indicium</span><span class="project-purpose">Personal records, organised</span><span class="expand-label" aria-hidden="true"></span></summary>
+<div class="project-body"><div class="project-content"><p>A personal tracking app with categories and tags. Changes queue locally while offline and synchronise when the connection returns.</p><p class="project-tools">Flutter · Android & Linux</p></div></div>
+</details>
+<details class="project" id="mediabot">
+<summary><span class="indicator" aria-hidden="true"></span><span class="project-name">Mediabot</span><span class="project-purpose">From screenshot to film title</span><span class="expand-label" aria-hidden="true"></span></summary>
+<div class="project-body"><div class="project-content"><p>Identifies films and television from screenshots. A desktop review interface lets you check suggestions, make corrections, and approve items for a saved list.</p><p class="project-tools">Python · Qt</p></div></div>
+</details>
+<details class="project" id="debian">
+<summary><span class="indicator" aria-hidden="true"></span><span class="project-name">Debian KDE Live</span><span class="project-purpose">A Linux system made to fit</span><span class="expand-label" aria-hidden="true"></span></summary>
+<div class="project-body"><div class="project-content"><p>A customised KDE live system and offline installer, with a deliberate software selection, hardware support, and optional development tools.</p><p class="project-tools">Debian · KDE · Shell</p></div></div>
+</details>
+<details class="project" id="releases">
+<summary><span class="indicator" aria-hidden="true"></span><span class="project-name">Release tools</span><span class="project-purpose">Keeping the apps up to date</span><span class="expand-label" aria-hidden="true"></span></summary>
+<div class="project-body"><div class="project-content"><p>A shared build and release workflow for personal Android apps. GitHub Releases and a companion Updater bring new versions to the devices that use them.</p><p class="project-tools">Shell · Android · GitHub</p></div></div>
+</details>
+<details class="project" id="actions">
+<summary><span class="indicator" aria-hidden="true"></span><span class="project-name">Actions</span><span class="project-purpose">Decisions and task capture</span><span class="expand-label" aria-hidden="true"></span></summary>
+<div class="project-body"><div class="project-content"><p>A companion to Sentry for reviewing requests and sending back a choice. Todo Router takes captured tasks to the right project's task file.</p><p class="project-tools">Kotlin · Python</p></div></div>
+</details>
+<details class="project" id="camrelay">
+<summary><span class="indicator" aria-hidden="true"></span><span class="project-name">CamRelay</span><span class="project-purpose">An Android phone as a Linux webcam</span><span class="expand-label" aria-hidden="true"></span></summary>
+<div class="project-body"><div class="project-content"><p>A local camera link between Android and Linux, with encrypted pairing and desktop camera controls. Physical end-to-end acceptance testing remains on the project checklist.</p><p class="project-tools">Kotlin · C++ · Qt · In development</p></div></div>
+</details>
+<details class="project" id="ollama">
+<summary><span class="indicator" aria-hidden="true"></span><span class="project-name">Ollama Native</span><span class="project-purpose">Local models on the desktop</span><span class="expand-label" aria-hidden="true"></span></summary>
+<div class="project-body"><div class="project-content"><p>A native desktop interface for Ollama, with streamed replies, attachments, and saved conversation history.</p><p class="project-tools">Rust · Slint</p></div></div>
+</details>
+<details class="project" id="countdown">
+<summary><span class="indicator" aria-hidden="true"></span><span class="project-name">Countdown</span><span class="project-purpose">A small desktop timer</span><span class="expand-label" aria-hidden="true"></span></summary>
+<div class="project-body"><div class="project-content"><p>A persistent KDE widget with independent countdowns, colours, and finish alerts. Its saved finish time keeps the countdown accurate across sleep and restarts.</p><p class="project-tools">KDE Plasma · QML</p></div></div>
+</details>
+<details class="project" id="security">
+<summary><span class="indicator" aria-hidden="true"></span><span class="project-name">Security tools</span><span class="project-purpose">Inspecting system activity</span><span class="expand-label" aria-hidden="true"></span></summary>
+<div class="project-body"><div class="project-content"><p>Sweeper collects and reviews local system activity. Perimeter checks an inventory of apps and services and prepares local reports. These projects favour observation and review before automated action.</p><p class="project-tools">Python · Linux · Ongoing</p></div></div>
+</details>
+</div>
+<a class="journal-link" href="./projects.html">Earlier experiments ↗</a>
+</main>
+<aside class="signature" aria-label="Site author"><span>website of</span><br>James McAllister-Barnard</aside>
+<footer><div class="contact"><a href="mailto:jaymacbarn@gmail.com">jaymacbarn@gmail.com</a><button class="copy-email" type="button" data-email="jaymacbarn@gmail.com" hidden>Copy email</button><span class="copy-status" role="status"></span></div><a href="https://github.com/naiaddd">GitHub ↗</a></footer>
+</div>
 </body>
-
 </html>

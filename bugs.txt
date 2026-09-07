@@ -1,0 +1,22 @@
+07/09/26 — Shared scripts failed on secondary pages
+Cause: script1.js assumed every page contained the homepage email, alert,
+last-updated and preview elements. Secondary pages omitted those elements.
+Trap: homepage testing alone missed null-element errors on the other pages.
+Fix: use optional, element-scoped enhancements; remove the unused previews
+and server-derived last-updated display. Use relative script paths.
+Regression check: open index.html, projects.html and autogit.html under a
+nested hosting path; check for script errors and follow navigation links.
+
+07/09/26 — Invalid JavaScript loaded by the homepage
+Cause: py.js contained HTML script tags but was loaded as JavaScript.
+Trap: an unused experiment still ran on every homepage visit.
+Fix: remove the dependency from the page. Keep the old experiment file
+outside the site's navigation.
+Regression check: homepage references only styles.css and script1.js;
+JavaScript syntax compilation passes in Node's vm.Script.
+
+07/09/26 — Copy-email failure had no visible feedback
+Cause: clipboard rejection was logged only to the console.
+Fix: show an accessible status message; offer copying only where the
+clipboard API exists, and keep the email link usable in all cases.
+Regression check: verify both clipboard success and rejection messages.
