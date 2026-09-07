@@ -1,0 +1,196 @@
+{
+  "_comment": "Single source of truth for projects.html and backlog.html. Edit this, then run: python3 build_projects.py",
+  "projects": [
+    {
+      "id": "tutor",
+      "name": "Tutor",
+      "status": "active",
+      "started": "2026-06",
+      "last_active": "2026-06",
+      "tech": ["Flutter", "Dart", "LLM"],
+      "summary": "Converts arbitrary datasets into chunked learning material with multiple-choice knowledge checks (FSRS spaced repetition planned).",
+      "milestones": [
+        {"date": "2026-06-24", "version": "0.1.6", "note": "Rapid iteration on the conversion pipeline."},
+        {"date": "2026-06-23", "version": "0.1.1", "note": "First builds: dataset -> chunked lessons -> MCQ checks."}
+      ],
+      "roadmap": ["FSRS scheduling", "richer dataset ingestion"]
+    },
+    {
+      "id": "sentry",
+      "name": "Sentry",
+      "status": "active",
+      "started": "2026-06",
+      "last_active": "2026-06",
+      "tech": ["service", "push notifications"],
+      "summary": "High-priority alert service: emergency weather (typhoon / earthquake), plus email keyword monitoring.",
+      "milestones": [
+        {"date": "2026-06-14", "version": "0.0.3", "note": "Distributed via the F-Droid repo."},
+        {"date": "2026-06-08", "version": "0.0.2", "note": "First packaged build."}
+      ]
+    },
+    {
+      "id": "anetmon",
+      "name": "Anetmon",
+      "status": "active",
+      "started": "2026-06",
+      "last_active": "2026-06",
+      "tech": ["Flutter", "Dart"],
+      "summary": "Network monitor — traffic logging and analysis. Descends from the 2025 network-traffic-logger CLI.",
+      "milestones": [
+        {"date": "2026-06-14", "version": "0.2.4", "note": "Continued feature passes."},
+        {"date": "2026-06-12", "version": "0.2.1"},
+        {"date": "2026-06-10", "version": "0.2.0"},
+        {"date": "2026-06-09", "version": "0.1.1"},
+        {"date": "2026-06-08", "version": "0.1.0", "note": "First minor release."},
+        {"date": "2026-06-07", "version": "0.0.3", "note": "Initial packaged builds."},
+        {"date": "2025-03-01", "note": "Lineage: network traffic logger prototype — 24h rolling logs, daily automation."}
+      ]
+    },
+    {
+      "id": "industria",
+      "name": "Industria",
+      "codename": "taskbot",
+      "status": "active",
+      "started": "2026-05",
+      "last_active": "2026-06",
+      "tech": ["Flutter", "Dart", "Firebase"],
+      "summary": "Keyboard-driven task manager — categories, 2-level subtasks, recurring tasks, client-side sort/filter.",
+      "milestones": [
+        {"date": "2026-06-14", "version": "0.5.1"},
+        {"date": "2026-06-04", "version": "0.5.0", "note": "Keyboard nav overhaul, nested tasks, notes fixes, UI tweaks."},
+        {"date": "2026-06-03", "version": "0.4.8", "note": "F-Droid deploy, settings refactor, animations pass 1."},
+        {"date": "2026-06-01", "version": "0.4.6", "note": "Settings persistence, parent categories, sorting options; completed tasks sort by completion date."},
+        {"date": "2026-05-30", "version": "0.4.0", "note": "Database authentication; deploy script."},
+        {"date": "2026-05-03", "note": "First release: recurring tasks (weekly/monthly/custom), long-press delete, category navigation, keyboard nav, splash screen."}
+      ]
+    },
+    {
+      "id": "indicium",
+      "name": "Indicium",
+      "codename": "stats_app",
+      "status": "active",
+      "started": "2026-05",
+      "last_active": "2026-06",
+      "tech": ["Flutter", "Dart", "Supabase"],
+      "summary": "Offline-first personal stats / quantified-self tracker (optimistic UI, Hive outbox, Supabase sync).",
+      "milestones": [
+        {"date": "2026-06-14", "version": "0.3.5"},
+        {"date": "2026-06-01", "version": "0.3.4", "note": "Category list view."},
+        {"date": "2026-05-10", "version": "0.3.3", "note": "Read/write debugging."},
+        {"date": "2026-05-09", "note": "Entry autofill (two passes), UI refinement."},
+        {"date": "2026-05-05", "note": "UI refactor, delete debugging."},
+        {"date": "2026-05-03", "note": "First code push; keyboard support, workflow streamlining, keynav."}
+      ]
+    },
+    {
+      "id": "fdroid",
+      "name": "F-Droid repo",
+      "codename": "fdroid",
+      "status": "active",
+      "started": "2026-05",
+      "last_active": "2026-06",
+      "tech": ["F-Droid", "Bash"],
+      "summary": "Self-hosted F-Droid repository distributing my own apps (Industria, Indicium, Anetmon, Sentry, Tutor).",
+      "milestones": [
+        {"date": "2026-06-24", "note": "Ongoing automated repository updates as apps ship."},
+        {"date": "2026-05-10", "note": "First app publishes to the repo."},
+        {"date": "2026-05-09", "note": "Repo set up; fixed file layout for F-Droid compatibility."}
+      ]
+    },
+    {
+      "id": "extensions",
+      "name": "Browser extensions",
+      "codename": "extensions",
+      "status": "shipped",
+      "started": "2026-05",
+      "last_active": "2026-05",
+      "tech": ["JavaScript", "Firefox WebExtension (MV3)"],
+      "summary": "unshit — YouTube declutter (hide by duration / blocked creators, single-column view); tabdash — a local-first new-tab startpage.",
+      "milestones": [
+        {"date": "2026-05-31", "note": "Consolidated extensions repo; unshit (YouTube declutter) and browser_startpage / tabdash."}
+      ]
+    },
+    {
+      "id": "ollama_native",
+      "name": "ollama-native",
+      "status": "latent",
+      "started": "2026-01",
+      "last_active": "2026-01",
+      "tech": ["Rust", "Slint", "Tokio", "SQLite", "ollama-rs"],
+      "summary": "Native desktop GUI for local Ollama LLMs — streaming chat, session history, file attachments.",
+      "milestones": [
+        {"date": "2026-01-12", "version": "0.1.25", "note": "GUI, async streaming, SQLite history, file-handling optimisation, error handling."}
+      ],
+      "roadmap": ["reintroduce as local AI workloads grow"]
+    },
+    {
+      "id": "briefer",
+      "name": "Briefer",
+      "status": "latent",
+      "started": "2024-10",
+      "last_active": "2025-03",
+      "tech": ["Python", "Bash"],
+      "summary": "Terminal productivity & information hub — a meta-program centralising jobs, news, weather, chat, tasks and wiki tools.",
+      "milestones": [
+        {"date": "2025-03-03", "note": "planner.py prototype — sleep-adjusted time budgeting."},
+        {"date": "2025-02-27", "note": "Integrated htmlConvert; specific-page fetch added to wikiFetch."},
+        {"date": "2025-02-22", "note": "chat-gpt CLI caller built and integrated; first ChatGPT API call."},
+        {"date": "2025-02-20", "note": "wikiFetch — random/specific Wikipedia page fetch."},
+        {"date": "2025-02-19", "note": "Jobber — RemoteOK data harvest, pagination, scrolling display."},
+        {"date": "2025-02-18", "note": "Newser — multi-outlet headline fetching (intercept + 6 outlets), print tuning."},
+        {"date": "2024-10-29", "version": "0.0.1", "note": "Newser, Tasker, WebFetcher, ConversionTool, WeatherChecker."}
+      ],
+      "roadmap": ["expand Newser sources (Dropsite, Twitter trends)", "task-completion reports", "logging / journal prompting"]
+    },
+    {
+      "id": "blogger",
+      "name": "blogger",
+      "status": "active",
+      "started": "2025-02",
+      "last_active": "2025-03",
+      "tech": ["HTML", "CSS", "vanilla JS"],
+      "summary": "This site — hand-rolled static personal site with an auto git pusher and an htmlConverter.",
+      "milestones": [
+        {"date": "2025-03-09", "note": "Projects page updates."},
+        {"date": "2025-02-27", "note": "Index condense, contact + copy button, inline previews, smooth fade."},
+        {"date": "2025-02-10", "note": "htmlConverter; header templating."},
+        {"date": "2025-02-09", "note": "Blogsite up; inline popup prototype."},
+        {"date": "2025-02-08", "note": "Auto git pusher."}
+      ]
+    }
+  ],
+  "experiments": [
+    {"name": "google qwiklabs intro to data engineering lab", "date": "2025-03-05"},
+    {"name": "random song name generator (for 7DRL)", "date": "2025-02-19"},
+    {"name": "crypto CLI price fetcher", "date": "2025-02-18"},
+    {"name": "first Euler challenge", "date": "2025-02-17"},
+    {"name": "CLI epub reader", "date": "2025-02-16"},
+    {"name": "telegram bot prototype", "date": "2025-02-12"},
+    {"name": "quote puller", "date": "2025-02-12"},
+    {"name": "Autoscroll bookmarklet", "date": "2025-02-11"},
+    {"name": "Custom CSS bookmarklet", "date": "2025-02-11"},
+    {"name": "Startup.sh", "date": "2025-02-11"},
+    {"name": "CoinFlip", "date": "2024-10-27"},
+    {"name": "DiceRoller", "date": "2024-10-28"},
+    {"name": "RockPaperScissors", "date": "2024-10-26"},
+    {"name": "ProgressBar", "date": "2024-10-25"},
+    {"name": "CharacterDeleter", "date": "2024-10-25"},
+    {"name": "CaesarCipher", "date": "2024-10-24"}
+  ],
+  "backlog": [
+    {"name": "pwned alerter", "note": "breach/credential exposure monitoring"},
+    {"name": "versioning update sniffer"},
+    {"name": "password salter", "note": "strengthen a password string via a salting algorithm"},
+    {"name": "tertiary course scraper", "note": "crawl uni courses by preference"},
+    {"name": "random coding challenge fetcher", "note": "multi-site, difficulty selection"},
+    {"name": "research paper fetcher / study assistant"},
+    {"name": "tarot app", "note": "randomised card puller + positional interpretation"},
+    {"name": "CalorieCalcer"},
+    {"name": "Budgeter", "note": "income extrapolator done; expand"},
+    {"name": "security sweeping & reports"},
+    {"name": "task-completion reports", "project": "Briefer", "note": "daily / weekly / monthly"},
+    {"name": "expand Newser sources", "project": "Briefer", "note": "Dropsite, Twitter trends"},
+    {"name": "logging / journal prompting", "project": "Briefer"},
+    {"name": "pull full internet archive copy"}
+  ]
+}
